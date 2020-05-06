@@ -1,0 +1,26 @@
+extends layout
+include _viewTabs
+include _accountPicker
+include _villageView
+
+block headContent
+  title MMORTS - in testing
+
+block headerContent
+  .wrapper
+    +accountPicker(true)
+  .wrapper#tab-wrapper
+    +viewTabs(unread)
+
+block defaultContent
+  #village-wrapper
+    +villageView(data, selected, orders)
+
+block scriptContent
+  script.
+    let val = !{JSON.stringify(data)}
+    let sel = !{selected}
+    let orders = !{JSON.stringify(orders)}
+    let movements = !{JSON.stringify(movements)}
+    updateResources(val[sel])
+    updateBuildTime(orders, movements)

@@ -1,0 +1,11 @@
+mixin accountPicker(loggedIn)
+
+  div#account-actions
+    if (!loggedIn)
+      span
+        a.account-entry(href='login') Login
+        a.account-entry(href='register') Register
+    else
+      span
+        a.account-entry(href='logout') Log out
+

@@ -1,0 +1,31 @@
+mixin villageView(data, selected, orders)
+
+  include lists/_listVillage
+  include lists/_listBuildOrder
+  include lists/_listResources
+  include lists/_listTroops
+  include _buildSlot
+  include _infoBox
+  include _mapInfoBox
+  include _buildMenu
+  include _troopMenu
+  include _inbox
+
+  -var village = data[selected]
+  #village-left
+    +listVillage(data, selected)
+    +listOrder(orders)
+  #village-center
+    +infoBox()
+    +buildMenu()
+    +troopMenu()
+    #map-div
+    +mapInfoBox(village.troops, village.resources)
+    #inbox-div
+      +inbox([])
+    #village-background
+      each building, index in village.buildings
+        +buildSlot(index, building)
+  #village-right
+    +listResources(village.level, village.resources, village.production, village.capacity, village.troops)
+    +listTroops(village.capacity.villagers, village.troops)

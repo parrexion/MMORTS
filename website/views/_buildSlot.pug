@@ -1,0 +1,46 @@
+mixin buildSlot(slotIndex, building)
+
+  -var onClickStr = `showBuilding(${slotIndex},${building.building},${building.level},${building.constructing})`
+  .village-slot
+    if building.building == 0
+      .village-slot-middle(onclick=onClickStr)
+    else if building.building == 1
+      .village-slot-middle
+        img(src='img/church.png' title='Church' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}
+    else if building.building == 2
+      .village-slot-middle
+        img(src='img/barn.png' title='Barn' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}
+    else if building.building == 3
+      .village-slot-middle
+        img(src='img/windmill.png' title='Windmill' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}
+    else if building.building == 4
+      .village-slot-middle
+        img(src='img/village.png' title='Village' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}
+    else if building.building == 5
+      .village-slot-middle
+        img(src='img/barracks.png' title='Barracks' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}
+    else if building.building == 6
+      .village-slot-middle
+        img(src='img/trade.png' title='Market' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}
+    else if building.building == 7
+      .village-slot-middle
+        img(src='img/tree.png' title='Orchard' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}
+    else if building.building == 8
+      .village-slot-middle
+        img(src='img/beehive.png' title='Beehive' onclick=onClickStr)
+        .village-slot-level
+          p #{building.constructing ? building.level + '+' : building.level}

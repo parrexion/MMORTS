@@ -1,0 +1,60 @@
+mixin mapInfoBox(troops, resources)
+
+  #map-info
+    div(style='float:right')
+      img.map-info-image#map-image(src='img/village.png')
+    #village-info
+      h2 Village name
+      p Owner of the village
+      p Level: 1200
+
+    .flex-dude
+      button.tab-button#map-action-troops(onClick='alert("action")') Attack
+      button.tab-button#map-action-send(onClick='alert("action")') Supply
+      button.tab-button.flex-last(onClick='closeMapInfo()') Close
+
+    #send-troops(style='display:none')
+      h2#send-troops-title Send troops
+      table(style='text-align:center') Troops
+        thead
+          tr 
+            td.table-border #{troops[0].name}
+            td.table-border #{troops[1].name}
+            td.table-border #{troops[2].name}
+        tbody
+          tr
+            td.table-border #{troops[0].units}
+            td.table-border #{troops[1].units}
+            td.table-border #{troops[2].units}
+          tr#troop-inputs
+            td
+              input.input-number(type='number' value='0' min='0' max=`${troops[0].units}` onchange="calculateCapacity(this)")
+            td
+              input.input-number(type='number' value='0' min='0' max=`${troops[1].units}` onchange="calculateCapacity(this)")
+            td
+              input.input-number(type='number' value='0' min='0' max=`${troops[2].units}` onchange="calculateCapacity(this)")
+
+      #send-resources(style='display:none')
+        table(style='display:inline-table;text-align:center;margin-right:60px')
+          thead
+            tr 
+              td.table-border Grain
+              td.table-border Apples
+              td.table-border Honey
+              td.table-border Meat
+          tbody
+            tr#resource-inputs
+              td
+                input.input-number(type='number' value='0' min='0' max=`${resources.grain}` onchange="calculateCapacity(this)")
+              td
+                input.input-number(type='number' value='0' min='0' max=`${resources.apple}` onchange="calculateCapacity(this)")
+              td
+                input.input-number(type='number' value='0' min='0' max=`${resources.honey}` onchange="calculateCapacity(this)")
+              td
+                input.input-number(type='number' value='0' min='0' max=`${resources.meat}` onchange="calculateCapacity(this)")
+        table(style='display:inline-table;width:120px;text-align:center')
+          tr
+            td.table-border Capacity
+          tr
+            td.table-border#send-capacity 200/1000
+

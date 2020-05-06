@@ -1,0 +1,47 @@
+mixin inbox(messages)
+
+  #inbox-menu
+    - var images = {text: 'img/envelope.png', building: 'img/house.png', loot: 'img/loot.png', death: 'img/death.png', plunder: 'img/attacked.png', defend: 'img/defend.png', reinforce: 'img/contract.png'}
+    div(style='float:right;padding:10px')
+      a(href='javascript:showInbox()') inbox
+      br
+      a(href='javascript:showOutbox()') write
+
+    #inbox-page
+      div.message-box
+        h5#message-sender From: Sender
+        h4#message-topic Message topic
+        .message-field
+          p.wrapper#message-message(style='overflow:auto') This is a long message that has been sent to the player.
+
+      div.scroll-list(style='height:250px')
+        table#message-table(style='width:100%')
+          tbody
+            each m, index in messages
+              - var date = new Date(m.createdAt)
+              - var now = new Date()
+              - var sameDay = (date.getFullYear() === now.getFullYear() && date.getMonth() === now.getMonth() && date.getDate() === now.getDate())
+              - var dateStr = (sameDay) ? 'Today':date.toLocaleDateString()
+              tr.message-entry
+                td.table-border
+                  img.icon(src=`${images[m.messageType]}`)
+                  span
+                    a(href=`javascript:selectMessage(${index})`) #{m.topic}
+                td.table-border(style='width:35%') #{`${date.getHours()}:${(date.getMinutes() < 10) ? '0'+ date.getMinutes() : date.getMinutes()}`} &ensp; #{dateStr}
+                td.list-entry-icon
+                  a(href=`javascript:removeMessage(${index},"${m.messageType}")`) X
+    #outbox-page.no-display
+      div.message-box.wrapper
+        label(for='outbox-recipient').field-label Recipient
+          input#outbox-recipient(type='text' name='recipient' style='width:350px')
+        br
+        label(for='outbox-topic').field-label Topic
+          input#outbox-topic(type='text' name='topic' style='width:350px')
+        div(style='margin-top:10px;height:300px')
+          textarea#outbox-message.wrapper(name='message' placeholder='Message...')
+        button.button#outbox-send(style='margin-top:10px' onclick='sendMessage()') Send
+        div(style='float:right;padding:10px')
+          p.success#outbox-success Successfully sent the message
+          p.failure#outbox-error
+
+

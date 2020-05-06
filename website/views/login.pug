@@ -1,0 +1,25 @@
+extends layout
+include _accountPicker
+
+block headContent
+  title Login
+
+block headerContent
+  +accountPicker(false)
+
+block defaultContent
+  .login-div
+    h1#login-space Login
+    form(action="auth-login" method="POST")
+      div.login-field
+        input(type="text" name="username" placeholder="Username" required)
+      div.login-field
+        input(type="password" name="password" placeholder="Password" required)
+      div.login-field
+        input(type="submit" value='Log in')
+      if error == 1
+        p.failure Invalid login credentials. Try again.
+
+  div
+    span No account? Create a new one 
+    a(href='register') Here

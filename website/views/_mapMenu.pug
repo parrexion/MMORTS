@@ -1,0 +1,21 @@
+mixin mapMenu(maps)
+
+  include _buildSlot
+
+  #map-menu
+    table.map-table(style='margin-left:4px')
+      each m in maps
+        tr
+          each slot in m
+            if slot.id != ''
+              td.map-slot
+                .tooltip2(onclick=`showMapInfo("${slot.id}","${slot.name}","${slot.owner}",${slot.level},${slot.state})`)
+                  if slot.state == 2
+                    img(src='img/currentTown.png')
+                  else if slot.state == 1
+                    img(src='img/allyTown.png')
+                  else
+                    img(src='img/enemyTown.png')
+                  span.tooltiptext #[strong #{slot.name}]<br>#{slot.owner}<br>Level: #{slot.level}
+            else
+              td.map-slot * <br> * *

@@ -1,0 +1,19 @@
+mixin infoBox
+
+  #info-box
+    h2#info-title info
+    div(style='float:right')
+      img#info-image
+      #info-cost
+        h3 Cost
+        p Level: 20
+        p Grain : 1200
+        p Apples : 1200
+        p Honey : 1200
+        p Meat : 240
+        p Time : 1:00:00
+      button.button#info-upgrade(onClick='upgradeBuilding()') Upgrade
+    h3#info-level Level 20
+    p#info-description(style='height:5em; margin-top: 25px') Description
+    .info-footer
+      button.button.info-button(onClick='closeInfo()') Close

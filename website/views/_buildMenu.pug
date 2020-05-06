@@ -1,0 +1,64 @@
+mixin buildMenu
+
+  #build-menu
+    - var n = 0;
+    h3 Build menu
+    .scroll-list(style='height:400px')
+      .list-building
+        .list-left-side
+          h4 Barn
+          p Increases the amount of food that can be stored.
+          p.no-margin-top #[strong Cost to build]: <br> Grain: 250, Meat: 30
+        .list-right-side
+          button.button.list-image.build-button(onclick='alert("Yo!")') Build
+          img.list-image(src='img/barn.png')
+      .list-building
+        .list-left-side
+          h4 Windmill
+          p Increases the grain production.
+          p.no-margin-top #[strong Cost to build]: <br> Grain: 200
+        .list-right-side
+          button.button.list-image.build-button(onclick='alert("Yo!")') Build
+          img.list-image(src='img/windmill.png')
+      .list-building
+        .list-left-side
+          h4 Houses
+          p Increases the amount of people in the village.
+          p.no-margin-top #[strong Cost to build]: <br> Grain: 100, Meat: 15
+        .list-right-side
+          button.button.list-image.build-button(onclick='alert("Yo!")') Build
+          img.list-image(src='img/village.png')
+      .list-building
+        .list-left-side
+          h4 Barracks
+          p Allows you to train soldiers.
+          p.no-margin-top #[strong Cost to build]: <br> Meat: 150
+        .list-right-side
+          button.button.list-image.build-button(onclick='alert("Yo!")') Build
+          img.list-image(src='img/barracks.png')
+      .list-building
+        .list-left-side
+          h4 Market
+          p Allows you to trade resources with other villages.
+          p.no-margin-top #[strong Cost to build]: <br> Grain: 30, Apple: 30, Honey: 30, Meat 10
+        .list-right-side
+          button.button.list-image.build-button(onclick='alert("Yo!")') Build
+          img.list-image(src='img/trade.png')
+      .list-building
+        .list-left-side
+          h4 Orchard
+          p Increases your apple production.
+          p.no-margin-top #[strong Cost to build]: <br> Apple: 200
+        .list-right-side
+          button.button.list-image.build-button(onclick='alert("Yo!")') Build
+          img.list-image(src='img/tree.png')
+      .list-building
+        .list-left-side
+          h4 Bee Hive
+          p Increases your honey production.
+          p.no-margin-top #[strong Cost to build]: <br> Honey: 200
+        .list-right-side
+          button.button.list-image.build-button(onclick='alert("Yo!")') Build
+          img.list-image(src='img/beehive.png')
+    .info-footer
+      button.button(onClick='closeInfo()') Close

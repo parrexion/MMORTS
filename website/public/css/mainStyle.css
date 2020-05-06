@@ -1,0 +1,452 @@
+/*Base changes*/
+textarea {
+  resize: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+*/
+
+
+/*Generics*/
+.header {
+  background-color: #cccccc;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.footer {
+  background-color: #cccccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.layer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.field-label {
+  margin-right: 15px;
+  width: 150px;
+}
+
+.input-number {
+  width: 60px;
+  text-align: right;
+}
+
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: green;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.success {
+  color: #4caf50;
+}
+
+.failure {
+  color: firebrick;
+}
+
+.no-margin-top {
+  margin-top: -10px;
+}
+
+.no-display {
+  display: none;
+}
+
+.icon {
+  margin-right: 4px;
+}
+
+/* HEADER */
+.logo {
+  float: left;
+}
+
+.title {
+  float: left;
+  margin-left: 15px;
+}
+
+#wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* ACCOUNT MANAGEMENT */
+#account-actions {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.account-entry {
+  margin: 15px;
+}
+
+#login-space {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.login-div {
+  margin-bottom: 200px;
+}
+
+.login-field {
+  margin: 10px;
+}
+
+/* TABLE LISTS */
+.table-list {
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.table-list td,
+.table-list th {
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+.table-name-column {
+  width: 50%;
+}
+
+.table-total-column {
+  width: 40%;
+}
+
+.table-timeleft-column {
+  width: 30%;
+}
+
+.table-middle-align {
+  text-align: center;
+}
+
+.table-list tr:hover {
+  background-color: #ddd;
+}
+
+.table-list th {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+.table-list-selected {
+  background-color: #f2f2f2;
+}
+
+.table-border {
+  border: 1px solid black;
+}
+
+/* LISTS */
+.scroll-list {
+  /* height: 300px; */
+  overflow: auto;
+  background-color: #ddd;
+  padding: 10px;
+}
+
+.list-image {
+  vertical-align: middle;
+  margin: 4px;
+}
+
+.list-building {
+  width: 100%;
+  height: 140px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.list-left-side {
+  float: left;
+  width: 250px;
+}
+
+.list-left-side-wide {
+  float: left;
+  width: 250px;
+  background-color: blanchedalmond;
+}
+
+.list-right-side {
+  float: right;
+  height: auto;
+}
+
+.list-entry-icon {
+  width: 40;
+  text-align: center;
+  padding: 0px;
+}
+
+/* TOOLTIPS */
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip2 .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  /* background-color: blanchedalmond; */
+  background-color: whitesmoke;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -75px;
+  z-index: 1;
+}
+
+.tooltip2:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip2 .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  /* border-color: blanchedalmond transparent transparent transparent; */
+  border-color: whitesmoke transparent transparent transparent;
+}
+
+/* TABS */
+.tab-owner {
+  display: table;
+  height: 100%;
+  margin-top: 76px;
+  margin-left: 310px;
+}
+
+.tab-parent {
+  list-style-type: none;
+  width: 400px;
+  display: table-row-group;
+}
+
+.tab-button {
+  display: table-cell;
+  background-color: #4caf50;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  width: 140px;
+}
+
+/* VILLAGE */
+#village-wrapper {
+  height: 550px;
+}
+
+#village-left {
+  background-color: blanchedalmond;
+  width: 310px;
+  min-height: 550px;
+  float: left;
+}
+
+#village-center {
+  width: 560px;
+  height: 450px;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  background-color: black;
+}
+
+#village-right {
+  background-color: blanchedalmond;
+  width: 310px;
+  min-height: 550px;
+  float: left;
+}
+
+#village-background {
+  width: 560px;
+  height: 450px;
+  background-image: url('../img/emptyVillage.png');
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: flex-start; */
+  align-content: space-between;
+  justify-content: center;
+}
+
+.village-slot {
+  width: 156px;
+  height: 136px;
+  /* background-color: chocolate; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.village-slot-middle {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: auto;
+  margin-top: 4px;
+}
+
+.village-slot-level {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 20px;
+  width: 3.5ch;
+  height: 1.5em;
+  text-align: center;
+  background-color: blanchedalmond;
+}
+
+/* INFO BOX */
+#info-box,
+#build-menu,
+#troop-menu,
+#map-div,
+#map-info,
+#inbox-div {
+  z-index: 1000;
+  position: absolute;
+  margin: auto;
+  background-color: whitesmoke;
+  width: 560px;
+  min-height: 550px;
+  padding: 20px;
+  display: none;
+}
+
+.info-footer {
+  position: relative;
+  min-height: 80px;
+  margin-top: 30px;
+}
+
+.info-button {
+  margin: 10px;
+}
+
+#info-cost {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* TROOPS */
+.convert-field {
+  height: 380px;
+  background-color: #ddd;
+  padding: 10px;
+}
+
+/* MAP */
+.map-table {
+  height: 504;
+  width: 504;
+}
+
+.map-slot {
+  border: 1px solid black;
+  text-align: center;
+  background-color: darkolivegreen;
+  color: whitesmoke;
+  width: 72px;
+  height: 72px;
+}
+
+.map-info-image {
+  width: 256px;
+  height: 256px;
+}
+
+#village-info {
+  height: 256px;
+}
+
+.flex-dude {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flex-last {
+  margin-left: auto;
+}
+
+/* MESSAGES */
+.message-box {
+  background-color: #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 390px;
+}
+
+.message-entry {
+  border: 1px solid black;
+  padding: 4px;
+  height: 30px;
+  width: 100%;
+}
+
+.message-field {
+  background-color: #fff;
+  margin-top: 10px;
+  height: 300px
+}
+
+.troop-table {
+  text-align: center;
+  margin: 10px;
+  width: 400px;
+}

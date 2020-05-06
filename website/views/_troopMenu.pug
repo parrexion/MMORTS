@@ -1,0 +1,43 @@
+mixin troopMenu
+
+  #troop-menu
+    - var n = 0;
+    h3 Build menu
+    .scroll-list-full
+      .list-building
+        .list-left-side
+          select#troop-slot1(onchange='troopTypeChanged(this, 1)')
+            option(value='0') Farmer
+            option(value='1') Worker
+            option(value='2') Merchant
+            option(value='3') Soldier
+            option(value='4') Spartan
+            option(value='5') Pegasi
+            option(value='6') Knight
+            option(value='7') Spy
+          p#troop-info1 Basic villager
+        .list-right-side
+          img.list-image#troop-img1(src='img/barn.png')
+      div(style='height:90px;padding-top:10px')
+        .list-left-side-wide(style='padding:20px 10px')
+          label.field-label(for='convert-from') #[strong Units to convert]
+          input.input-number#convert-from(type='text' value='1' oninput='troopCountChanged(this)')
+        .list-right-side
+          button.button.list-image.build-button(onclick='startTraining()') Train
+        .list-right-side(style='margin-right:50px')
+          p#troop-cost #[strong Cost to convert] <br> Grain: 125<br> Apples: 25<br> Honey: 25<br> Meat: 25
+      .list-building
+        .list-left-side
+          select#troop-slot2(onchange='troopTypeChanged(this, 2)')
+            option(value='0') Farmer
+            option(value='1') Worker
+            option(value='2') Merchant
+            option(value='3' selected='selected') Soldier
+            option(value='4') Spartan
+            option(value='5') Pegasi
+            option(value='6') Knight
+            option(value='7') Spy
+          p#troop-info2 Basic warrior
+          p.no-margin-top#troop-cost2 #[strong Cost to convert] <br> Grain: 125<br> Apples: 25<br> Honey: 25<br> Meat: 25
+        .list-right-side
+          img.list-image#troop-img2(src='img/barracks.png')

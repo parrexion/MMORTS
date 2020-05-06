@@ -1,0 +1,43 @@
+mixin listResources(level, total, production, capacity, troops)
+
+  -var totalTroops = 0
+  - for (var i = 0; i < troops.length; i++)
+    - totalTroops += troops[i].units
+  div.villageList
+    h3 Resources
+    table.table-list
+      tr
+        th Type
+        th(style='width:25%') Income
+        th(style='width:40%') Total
+      tbody
+        tr
+          td
+            img.icon(title='Grain' src='img/grain.png')
+            span Grain
+          td.table-middle-align #{(production.grain > 0) ? '+' + production.grain : production.grain}
+          td.table-middle-align#grainTotal #{Math.floor(total.grain)} / #{capacity.grain}
+        tr
+          td
+            img.icon(title='Apples' src='img/apple.png')
+            span Apples
+          td.table-middle-align #{(production.apple > 0) ? '+' + production.apple : production.apple}
+          td.table-middle-align#meatTotal #{Math.floor(total.apple)} / #{capacity.apple}
+        tr
+          td
+            img.icon(title='Honey' src='img/honey.png')
+            span Honey
+          td.table-middle-align #{(production.honey > 0) ? '+' + production.honey : production.honey}
+          td.table-middle-align#grainTotal #{Math.floor(total.honey)} / #{capacity.honey}
+        tr
+          td
+            img.icon(title='Meat' src='img/meat.png')
+            span Meat
+          td.table-middle-align #{(production.meat > 0) ? '+' + production.meat : production.meat}
+          td.table-middle-align#meatTotal #{Math.floor(total.meat)} / #{capacity.meat}
+        tr
+          td
+            img.icon(title='Villagers' src='img/person.png')
+            span  Villagers
+          td.table-middle-align +#{production.villagers}
+          td.table-middle-align#villagersTotal #{Math.floor(totalTroops)} / #{capacity.villagers}

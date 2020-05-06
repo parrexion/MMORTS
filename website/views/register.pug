@@ -1,0 +1,47 @@
+extends layout
+include _accountPicker
+
+block headContent
+	title Register
+
+block headerContent
+	+accountPicker(false)
+
+block defaultContent
+	if (create != null)
+		div#register-success
+			if (create.res == 0)
+				h2.success Registration success!
+				div
+					span Click
+					| 
+					a(href='login') Here
+					| 
+					span to continue to the login page.
+			if (create.res == 1)
+				p.failure That username is not available.
+				p Go back and select a different one.
+			if (create.res == 2)
+				p.failure That email address is already in use.
+				p Go back and select a different one.
+
+	if (!create)
+		.login-div
+			h1#login-space Register account
+			form(action="auth-reg" method="POST")
+				div.login-field
+					label.field-label(for='#register-email') E-mail
+					input#register-email(type="email" name="email" placeholder="example@email.com" required)
+				div.login-field
+					label.field-label(for='#register-username') Username
+					input#register-username(type="text" name="username" placeholder="Username" required)
+				div.login-field
+					label.field-label(for='#register-password') Password
+					input#register-password(type="password" name="password" placeholder="Password" required)
+				div.login-field
+					input(type="submit" value='Register')
+
+		div
+			span Already have an account? Log in 
+			a(href='login') Here
+

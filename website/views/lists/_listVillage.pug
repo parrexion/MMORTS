@@ -1,0 +1,21 @@
+mixin listVillage(villages, villageIndex)
+
+  div.villageList
+    h3 Villages
+    table.table-list
+      tr
+        th.table-name-column Name
+        th Level
+        th Busy
+      tbody
+        each item, index in villages
+          if index == villageIndex
+            tr.table-list-selected
+              td.table-name-column #{item.name}
+              td.table-middle-align #{item.level}
+              td.table-middle-align #{(item.buildings.filter(b=>b.constructing).length > 0) ? 'Yes' : 'No'}
+          else
+            tr(onClick='selectVillage('+ index +')')
+              td.table-name-column #{item.name}
+              td.table-middle-align #{item.level}
+              td.table-middle-align #{(item.buildings.filter(b=>b.constructing).length > 0) ? 'Yes' : 'No'}

@@ -1,0 +1,64 @@
+mixin listTroops(villagers, troopData)
+
+  div.troopList
+    h3 Villagers
+    table.table-list
+      tr
+        th.table-name-column Type
+        th Units
+        th Upkeep
+      tbody
+        tr
+          td
+            img.icon(title=`${troopData[0].name}` src='img/farmer.png')
+            span #{troopData[0].name}
+          td.table-middle-align #{troopData[0].units}
+          td.table-middle-align #{troopData[0].upkeep.grain}/#{troopData[0].upkeep.apple}/#{troopData[0].upkeep.honey}/#{troopData[0].upkeep.meat}
+        tr
+          td
+            img.icon(title=`${troopData[1].name}` src='img/basic-worker.png')
+            span #{troopData[1].name}
+          td.table-middle-align #{troopData[1].units}
+          td.table-middle-align #{troopData[1].upkeep.grain}/#{troopData[1].upkeep.apple}/#{troopData[1].upkeep.honey}/#{troopData[1].upkeep.meat}
+        if troopData[2].units > 0
+          tr
+            td
+              img.icon(title=`${troopData[2].name}` src='img/merchant.png')
+              span #{troopData[2].name}
+            td.table-middle-align #{troopData[2].units}
+            td.table-middle-align #{troopData[2].upkeep.grain}/#{troopData[2].upkeep.apple}/#{troopData[2].upkeep.honey}/#{troopData[2].upkeep.meat}
+        if troopData[3].units > 0
+          tr
+            td
+              img.icon(title=`${troopData[3].name}` src='img/basic-soldier.png')
+              span #{troopData[3].name}
+            td.table-middle-align #{troopData[3].units}
+            td.table-middle-align #{troopData[3].upkeep.grain}/#{troopData[3].upkeep.apple}/#{troopData[3].upkeep.honey}/#{troopData[3].upkeep.meat}
+        if troopData[4].units > 0
+          tr
+            td
+              img.icon(title=`${troopData[4].name}` src='img/spartan.png')
+              span #{troopData[4].name}
+            td.table-middle-align #{troopData[4].units}
+            td.table-middle-align #{troopData[4].upkeep.grain}/#{troopData[4].upkeep.apple}/#{troopData[4].upkeep.honey}/#{troopData[4].upkeep.meat}
+        if troopData[5].units > 0
+          tr
+            td
+              img.icon(title=`${troopData[5].name}` src='img/pegasus.png')
+              span #{troopData[5].name}
+            td.table-middle-align #{troopData[5].units}
+            td.table-middle-align #{troopData[5].upkeep.grain}/#{troopData[5].upkeep.apple}/#{troopData[5].upkeep.honey}/#{troopData[5].upkeep.meat}
+        if troopData[6].units > 0
+          tr
+            td
+              img.icon(title=`${troopData[6].name}` src='img/knight.png')
+              span #{troopData[6].name}
+            td.table-middle-align #{troopData[6].units}
+            td.table-middle-align #{troopData[6].upkeep.grain}/#{troopData[6].upkeep.apple}/#{troopData[6].upkeep.honey}/#{troopData[6].upkeep.meat}
+        if troopData[7].units > 0
+          tr
+            td
+              img.icon(title=`${troopData[7].name}` src='img/spy.png')
+              span #{troopData[7].name}
+            td.table-middle-align #{troopData[7].units}
+            td.table-middle-align #{troopData[7].upkeep.grain}/#{troopData[7].upkeep.apple}/#{troopData[7].upkeep.honey}/#{troopData[7].upkeep.meat}

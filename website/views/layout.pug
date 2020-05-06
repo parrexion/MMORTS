@@ -1,0 +1,25 @@
+doctype html
+head
+  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+  link(rel='stylesheet', href='/css/mainStyle.css')
+
+  block headContent
+
+body
+  #wrapper
+    .header
+      .logo
+        img(src='img/logo.png')
+      .title
+        h1 Matvraksbyn
+      block headerContent
+
+    .layer
+      block defaultContent
+
+    .footer
+      p Copyright &copy; Parrexion Games
+
+  script(src='/js/library.js')
+  script(src='/js/main.js')
+  block scriptContent

@@ -1,0 +1,8 @@
+mixin viewTabs(unreadCount)
+
+  .tab-owner#main-tabs
+    ul.tab-parent
+      button.tab-button(onclick='selectTab(0)') Village
+      button.tab-button(onclick='selectTab(1)') Troops
+      button.tab-button(onclick='selectTab(2)') Map
+      button.tab-button#tab-message(onclick='selectTab(3)') Messages (#{unreadCount})

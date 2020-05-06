@@ -1,0 +1,16 @@
+mixin listOrder(orders, movements)
+
+  div.villageList#work-queue
+    h3 Work queue
+    table.table-list
+      tr
+        th.table-name-column Building
+        th.table-timeleft-column Time left
+      tbody#build-order-table
+  div.villageList#movement-queue
+    h3 Troop movements
+    table.table-list
+      tr
+        th.table-name-column Village
+        th.table-timeleft-column Time left
+      tbody#troop-movement-table
