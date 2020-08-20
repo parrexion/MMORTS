@@ -7,7 +7,7 @@
     "start": "nodemon app.js -e js,pug"
   },
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "chalk": "^4.0.0",
     "connect-mongo": "^3.2.0",
     "express": "^4.17.1",
